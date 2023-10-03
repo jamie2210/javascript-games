@@ -1,19 +1,36 @@
-
+/* buttons ----------------------- */
 
 .btn-link {
     text-decoration: none;
-    border: none;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 5px;
 }
 
-.btn-link:hover {
+.btn-link button {
+    border: 3px solid rgb(198, 116, 249);
+    border-radius: 10px; 
+}
+
+.btn-link button:hover {
     cursor: pointer;
 }
 
 .btn-link img {
     height: 100px;
     width: 100px;
+}
+
+#rps-btn {
+    background-color: rgb(221, 166, 255);
+}
+
+#rps-btn:hover {
+    background-color: rgb(198, 116, 249);
+}
+
+.btn-text {
+    margin: 5px 0 0 0;
 }
