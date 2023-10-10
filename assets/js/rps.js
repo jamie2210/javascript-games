@@ -6,9 +6,16 @@ const computerChoiceDisplay = document.getElementById('computer-choice')
 const userChoiceDisplay = document.getElementById('user-choice')
 const resultDisplay = document.getElementById('result')
 const possibleChoices = document.querySelectorAll('.choice-btn')
+const userScore = document.getElementById('user-score')
+const computerScore = document.getElementById('computer-score')
+let userScoreValue = 0;
+let computerScoreValue = 0;
 let userChoice
 let computerChoice
 let result
+
+userScore.innerHTML = userScoreValue;
+computerScore.innerHTML = computerScoreValue;
 
 possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
     userChoice = e.target.id
@@ -34,25 +41,21 @@ function generateComputerChoice() {
 
 function getResult() {
   if (computerChoice === userChoice) {
-    result = "It's a draw!"
+    result = "It's a draw!";
   }
-  if (computerChoice === 'rock' && userChoice === 'scissors') {
-    result = "You lose!"
+  else if (
+  (computerChoice === 'rock' && userChoice === 'scissors') ||
+  (computerChoice === 'scissors' && userChoice === 'paper') ||
+  (computerChoice === 'paper' && userChoice === 'rock')
+  ) {
+    result = "You lose!";
+    computerScoreValue += 1;
   }
-  if (computerChoice === 'rock' && userChoice === 'paper') {
-    result = "You win!"
+  else {
+    result = "You win!";
+    userScoreValue += 1;
   }
-  if (computerChoice === 'scissors' && userChoice === 'rock') {
-    result = "You win!"
-  }
-  if (computerChoice === 'scissors' && userChoice === 'paper') {
-    result = "You lose!"
-  }
-  if (computerChoice === 'paper' && userChoice === 'rock') {
-    result = "You lose!"
-  }
-  if (computerChoice === 'paper' && userChoice === 'scissors') {
-    result = "You win!"
-  }
-  resultDisplay.innerHTML = result
+  userScore.innerHTML = userScoreValue;
+  computerScore.innerHTML = computerScoreValue;
+  resultDisplay.innerHTML = result;
 }
