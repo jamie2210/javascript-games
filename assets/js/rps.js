@@ -14,6 +14,10 @@ let userChoice
 let computerChoice
 let result
 
+userChoiceDisplay.innerHTML = '________';
+computerChoiceDisplay.innerHTML = '________';
+resultDisplay.innerHTML = '________';
+
 userScore.innerHTML = userScoreValue;
 computerScore.innerHTML = computerScoreValue;
 
@@ -28,13 +32,13 @@ function generateComputerChoice() {
   const randomNumber = Math.floor(Math.random() * possibleChoices.length)
 
   if (randomNumber === 0) {
-    computerChoice = 'rock'
+    computerChoice = 'Rock'
   }
   if (randomNumber === 1) {
-    computerChoice = 'scissors'
+    computerChoice = 'Scissors'
   }
   if (randomNumber === 2) {
-    computerChoice = 'paper'
+    computerChoice = 'Paper'
   }
   computerChoiceDisplay.innerHTML = computerChoice
 }
@@ -44,9 +48,9 @@ function getResult() {
     result = "It's a draw!";
   }
   else if (
-  (computerChoice === 'rock' && userChoice === 'scissors') ||
-  (computerChoice === 'scissors' && userChoice === 'paper') ||
-  (computerChoice === 'paper' && userChoice === 'rock')
+  (computerChoice === 'Rock' && userChoice === 'Scissors') ||
+  (computerChoice === 'Scissors' && userChoice === 'Paper') ||
+  (computerChoice === 'Paper' && userChoice === 'Rock')
   ) {
     result = "You lose!";
     computerScoreValue += 1;
@@ -58,4 +62,11 @@ function getResult() {
   userScore.innerHTML = userScoreValue;
   computerScore.innerHTML = computerScoreValue;
   resultDisplay.innerHTML = result;
+
+  userChoiceDisplay.style.visibility = 'visible';
+  userChoiceDisplay.style.opacity = '1';
+  computerChoiceDisplay.style.visibility = 'visible';
+  computerChoiceDisplay.style.opacity = '1';
+  resultDisplay.style.visibility = 'visible';
+  resultDisplay.style.opacity = '1';
 }
