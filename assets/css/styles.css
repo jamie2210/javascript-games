@@ -1,5 +1,10 @@
 /* body ----------------------- */
 
+.rps-body {
+    font-family: 'Belanosima', sans-serif;
+    background-color: rgb(118, 225, 182);
+}
+
 .title {
     margin: 30px;
 }
@@ -67,8 +72,18 @@
     margin-right: 200px;
 }
 
-.choice-btn {
+.rps-icon {
     margin: 20px;
-    width: 150px;
-    height: 50px;
+    height: 200px;
+    width: auto;
+    transition: transform 0.3s;
+}
+
+.rps-icon:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.rps-icon:active {
+    transform: scale(1);
 }

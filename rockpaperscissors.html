@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Belanosima&display=swap" rel="stylesheet">
     <!-- Boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <title>Rock Paper Scissors</title>
 </head>
-<body>
+<body class="rps-body">
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
@@ -79,10 +83,10 @@
             </div>
         </div>
     </div>
-    <div class="text-center">
-        <button class="choice-btn" id="Rock">Rock</button>
-        <button class="choice-btn" id="Paper">Paper</button>
-        <button class="choice-btn" id="Scissors">Scissors</button>
+    <div class="text-center container-fluid">
+            <img src="assets/images/rps/rock.png" class="rps-icon" id="Rock" alt="closed fist image for rock">
+            <img src="assets/images/rps/paper.png" class="rps-icon" id="Paper" alt="closed fist image for rock">
+            <img src="assets/images/rps/scissors.png" class="rps-icon" id="Scissors" alt="closed fist image for rock">
     </div>
     <div class="text-center">
         <div class="row">

@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
 const computerChoiceDisplay = document.getElementById('computer-choice')
 const userChoiceDisplay = document.getElementById('user-choice')
 const resultDisplay = document.getElementById('result')
-const possibleChoices = document.querySelectorAll('.choice-btn')
+const possibleChoices = document.querySelectorAll('.rps-icon')
 const userScore = document.getElementById('user-score')
 const computerScore = document.getElementById('computer-score')
 let userScoreValue = 0;
@@ -70,3 +70,4 @@ function getResult() {
   resultDisplay.style.visibility = 'visible';
   resultDisplay.style.opacity = '1';
 }
+
