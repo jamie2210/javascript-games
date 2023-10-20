@@ -1,15 +1,8 @@
 /* body ----------------------- */
 
-.rps-body {
-    font-family: 'Belanosima', sans-serif;
-    background-color: rgb(118, 225, 182);
-}
-
 .title {
     margin: 30px;
 }
-
-
 
 /* buttons ----------------------- */
 
@@ -57,6 +50,15 @@
 
 /* Rock Paper Scissors ---------------- */
 
+.rps-body {
+    font-family: 'Belanosima', sans-serif;
+    background-color: rgb(118, 225, 182);
+}
+
+.sub-title {
+    font-size: x-large;
+}
+
 #user-choice,
 #computer-choice,
 #result {
@@ -87,3 +89,21 @@
 .rps-icon:active {
     transform: scale(1);
 }
+
+/* Media Queries ---------------- */
+
+@media (max-width: 768px) {
+    .comp-answer {
+        margin-left: 0;
+    }
+    
+    .user-answer {
+        margin-right: 0;
+    }
+    .rps-icon {
+        margin: 10px;
+        height: 150px;
+        width: auto;
+        transition: transform 0.3s;
+    }
+  }
