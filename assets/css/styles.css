@@ -3,6 +3,9 @@
 .title {
     margin: 30px;
 }
+.row-width {
+    max-width: 1000px;
+}
 
 /* buttons ----------------------- */
 
@@ -46,6 +49,10 @@
     margin-top: 5px;
     margin-bottom: 0;
     text-decoration: none;
+}
+
+.game-btn-container {
+    width: 200px;
 }
 
 /* Rock Paper Scissors ---------------- */
