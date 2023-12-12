@@ -8,6 +8,10 @@ const resultDisplay = document.getElementById('result')
 const possibleChoices = document.querySelectorAll('.rps-icon')
 const userScore = document.getElementById('user-score')
 const computerScore = document.getElementById('computer-score')
+const winModal = document.getElementById('win-modal');
+const winBackground = document.getElementById('win-background');
+const loseModal = document.getElementById('lose-modal');
+const loseBackground = document.getElementById('lose-background');
 let userScoreValue = 0;
 let computerScoreValue = 0;
 let userChoice
@@ -64,7 +68,10 @@ function getResult() {
   else {
     result = "You win!";
     userScoreValue += 1;
+    console.log("Result: ", result);
+    youWon();
   }
+
   userScore.innerHTML = userScoreValue;
   computerScore.innerHTML = computerScoreValue;
   resultDisplay.innerHTML = result;
@@ -101,7 +108,7 @@ function youWon() {
   winModal.style.display = "block";
   winBackground.style.display = "block";
   document.querySelector('.wins').innerHTML = wins += 1;
-  document.querySelector('.-wins').innerHTML = computerWins += 1;
+  document.querySelector('.computer-wins').innerHTML = computerWins += 1;
   document.querySelector('.user-wins').innerHTML = userWins += 1;
   }
 }
@@ -110,13 +117,14 @@ function youWon() {
 * Resets everything on the page apart from the Wins and Losses scores.
 * Closes modal.
 */
-function reset() {
-  userScoreValue = 0;
-  computerScoreValue = 0;
-  winModal.style.display = "none";
-  winBackground.style.display = "none";
-  loseModal.style.display = "none";
-  loseBackground.style.display = "none";
-}
 
+function reset() {
+  location.reload();
+  // userScoreValue = 0;
+  // computerScoreValue = 0;
+  // winModal.style.display = "none";
+  // winBackground.style.display = "none";
+  // loseModal.style.display = "none";
+  // loseBackground.style.display = "none";
+}
 
