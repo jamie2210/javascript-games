@@ -13,6 +13,12 @@ let computerScoreValue = 0;
 let userChoice
 let computerChoice
 let result
+let wins = 0;
+let losses = 0;
+let computerWins = 0;
+let computerLosses = 0;
+let userWins = 0;
+let userLosses = 0;
 
 userChoiceDisplay.innerHTML = '________';
 computerChoiceDisplay.innerHTML = '________';
@@ -70,4 +76,47 @@ function getResult() {
   resultDisplay.style.visibility = 'visible';
   resultDisplay.style.opacity = '1';
 }
+
+/**
+ * Activates 'lose' modal.
+ * Removes the hidden phrase.
+ * Increases the Losses score by 1.
+ */
+function youLost() {
+  if (computerScoreValue === 5) {
+      loseModal.style.display = "block";
+      loseBackground.style.display = "block";
+      document.querySelector('.losses').innerHTML = losses += 1;
+      document.querySelector('.joker-losses').innerHTML = computerLosses += 1;
+      document.querySelector('.batman-losses').innerHTML = userLosses += 1;
+  }
+}
+
+/**
+* Activates 'win' modal.
+* Increase the Wins score by 1.
+*/
+function youWon() {
+  if (userScoreValue === 5) {
+  winModal.style.display = "block";
+  winBackground.style.display = "block";
+  document.querySelector('.wins').innerHTML = wins += 1;
+  document.querySelector('.-wins').innerHTML = computerWins += 1;
+  document.querySelector('.user-wins').innerHTML = userWins += 1;
+  }
+}
+
+/**
+* Resets everything on the page apart from the Wins and Losses scores.
+* Closes modal.
+*/
+function reset() {
+  userScoreValue = 0;
+  computerScoreValue = 0;
+  winModal.style.display = "none";
+  winBackground.style.display = "none";
+  loseModal.style.display = "none";
+  loseBackground.style.display = "none";
+}
+
 
