@@ -64,11 +64,11 @@ function getResult() {
   ) {
     result = "You lose!";
     computerScoreValue += 1;
+    youLost();
   }
   else {
     result = "You win!";
     userScoreValue += 1;
-    console.log("Result: ", result);
     youWon();
   }
 
@@ -84,32 +84,24 @@ function getResult() {
   resultDisplay.style.opacity = '1';
 }
 
-/**
- * Activates 'lose' modal.
- * Removes the hidden phrase.
- * Increases the Losses score by 1.
- */
-function youLost() {
-  if (computerScoreValue === 5) {
-      loseModal.style.display = "block";
-      loseBackground.style.display = "block";
-      document.querySelector('.losses').innerHTML = losses += 1;
-      document.querySelector('.joker-losses').innerHTML = computerLosses += 1;
-      document.querySelector('.batman-losses').innerHTML = userLosses += 1;
-  }
-}
 
 /**
 * Activates 'win' modal.
-* Increase the Wins score by 1.
 */
 function youWon() {
   if (userScoreValue === 5) {
   winModal.style.display = "block";
   winBackground.style.display = "block";
-  document.querySelector('.wins').innerHTML = wins += 1;
-  document.querySelector('.computer-wins').innerHTML = computerWins += 1;
-  document.querySelector('.user-wins').innerHTML = userWins += 1;
+  }
+}
+
+/**
+ * Activates 'lose' modal.
+ */
+function youLost() {
+  if (computerScoreValue === 5) {
+  loseModal.style.display = "block";
+  loseBackground.style.display = "block";
   }
 }
 
@@ -117,14 +109,14 @@ function youWon() {
 * Resets everything on the page apart from the Wins and Losses scores.
 * Closes modal.
 */
-
 function reset() {
   location.reload();
-  // userScoreValue = 0;
-  // computerScoreValue = 0;
-  // winModal.style.display = "none";
-  // winBackground.style.display = "none";
-  // loseModal.style.display = "none";
-  // loseBackground.style.display = "none";
+}
+
+/**
+* Return use home
+*/
+function home() {
+  window.location.href = 'index.html';
 }
 

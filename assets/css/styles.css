@@ -1,13 +1,15 @@
-/* body ----------------------- */
+/* -------------------------------- body */
 
 .title {
     margin: 30px;
 }
+
 .row-width {
-    max-width: 1000px;
+    max-width: 800px;
+    margin: auto;
 }
 
-/* buttons ----------------------- */
+/* -------------------------------- buttons */
 
 .game-btn {
     width: 200px;
@@ -53,7 +55,7 @@
     width: 200px;
 }
 
-/* Rock Paper Scissors ---------------- */
+/* -------------------------------- Rock Paper Scissors */
 
 .rps-body {
     font-family: 'Belanosima', sans-serif;
@@ -95,19 +97,44 @@
     transform: scale(1);
 }
 
+.mobile-result {
+    margin: 20px;
+    display: none;
+}
+
+.comp-answer,
+.user-answer,
+.answers {
+    margin: 0;
+    padding-left: 10px;
+}
+
+.result-container {
+    width: 400px;
+    display: inline-block;
+}
+
+.choice-display p {
+    font-weight:300;
+    font-size: 25px;
+}
+
+/* -------------------------------- Modals  */
+
+
 .win-modal {
     max-width: 500px;
+    width: auto;
     height: auto;
     border: 6px solid #d8d8d8;;
     background-color: rgb(56, 193, 138);
     position: absolute;
-    margin: auto;
     padding-bottom: 20px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    /* display: none; */
+    display: none;
     animation:fadein 1s;
 }
 
@@ -119,11 +146,40 @@
     height:100vh;
     background-color:rgba(0,0,0,0.7);
     display: none;
+    padding: 30px;
 }
 
-/* Media Queries ---------------- */
+.lose-modal {
+    max-width: 500px;
+    width: auto;
+    height: auto;
+    border: 6px solid #d8d8d8;;
+    background-color: rgb(170, 60, 60);
+    position: absolute;
+    padding-bottom: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    display: none;
+    animation:fadein 1s;
+}
+
+.lose-background{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background-color:rgba(0,0,0,0.7);
+    display: none;
+    padding: 30px;
+}
+
+/* -------------------------------- Media Queries */
 
 @media (max-width: 768px) {
+
     .comp-answer {
         margin-left: 0;
     }
@@ -137,4 +193,23 @@
         width: auto;
         transition: transform 0.3s;
     }
-  }
+    .lose-modal,
+    .win-modal {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 573px) {
+    .lose-modal,
+    .win-modal {
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 350px) {
+        
+    .lose-modal,
+    .win-modal {
+        max-width: 275px;
+    }
+}
