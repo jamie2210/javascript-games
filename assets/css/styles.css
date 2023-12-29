@@ -176,6 +176,12 @@
     padding: 30px;
 }
 
+.modal-icon {
+    margin: 20px;
+    height: 200px;
+    width: auto;
+}
+
 /* -------------------------------- Media Queries */
 
 @media (max-width: 768px) {
