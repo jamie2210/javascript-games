@@ -89,7 +89,7 @@ function getResult() {
 * Activates 'win' modal.
 */
 function youWon() {
-  if (userScoreValue === 5) {
+  if (userScoreValue === 3) {
   winModal.style.display = "block";
   winBackground.style.display = "block";
   }
@@ -99,7 +99,7 @@ function youWon() {
  * Activates 'lose' modal.
  */
 function youLost() {
-  if (computerScoreValue === 5) {
+  if (computerScoreValue === 3) {
   loseModal.style.display = "block";
   loseBackground.style.display = "block";
   }

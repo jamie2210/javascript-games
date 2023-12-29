@@ -90,7 +90,7 @@
 
 .rps-icon:hover {
     cursor: pointer;
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .rps-icon:active {
@@ -203,6 +203,35 @@
     .lose-modal,
     .win-modal {
         max-width: 350px;
+    }
+    .rps-icon {
+        margin: 0;
+        height: 100px;
+        width: auto;
+        padding: 0;
+        transition: transform 0.3s;
+    }
+
+    .choice-display {
+        padding-bottom: 10px;
+    }
+
+    .choice-display p {
+        font-weight:200;
+        font-size: 20px;
+    }
+    
+    .rps-icon:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+    }
+    
+    .rps-icon:active {
+        transform: scale(1);
+    }
+
+    .sm-results {
+        padding-top: 20px;
     }
 }
 
