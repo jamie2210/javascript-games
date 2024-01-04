@@ -138,6 +138,22 @@
     animation:fadein 1s;
 }
 
+.win-modal-mg {
+    max-width: 500px;
+    width: auto;
+    height: auto;
+    border: 6px solid #d8d8d8;;
+    background-color: rgb(56, 193, 138);
+    position: absolute;
+    padding-bottom: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    display: none;
+    animation:fadein 1s;
+}
+
 .win-background{
     position:fixed;
     top:0;
@@ -165,6 +181,22 @@
     animation:fadein 1s;
 }
 
+.lose-modal-mg {
+    max-width: 500px;
+    width: auto;
+    height: auto;
+    border: 6px solid #d8d8d8;;
+    background-color: rgb(170, 60, 60);
+    position: absolute;
+    padding-bottom: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    display: none;
+    animation:fadein 1s;
+}
+
 .lose-background{
     position:fixed;
     top:0;
@@ -175,6 +207,8 @@
     display: none;
     padding: 30px;
 }
+
+
 
 .modal-icon {
     margin: 20px;
