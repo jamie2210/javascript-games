@@ -132,6 +132,8 @@ const cardArray = [
 cardArray.sort(() => 0.5 - Math.random())
 
 const gridDisplay = document.querySelector('#grid')
+const cardsChosen = []
+const cardsChosenIds = []
 
 function createBoard() {
     for (let i = 0; i < cardArray.length; i++) {
@@ -139,12 +141,37 @@ function createBoard() {
         card.setAttribute('src', 'assets/images/memory/question-card3.png');
         card.setAttribute('data-id', i);
         card.classList.add('grid-item', 'img-fluid');
+        card.addEventListener('click', flipCard)
         gridDisplay.appendChild(card);
     }
 }
 
 createBoard()
 
+function checkMatch() {
+    const cards = document.querySelectorAll('#grid img')
+    console.log('check for match!')
+   if (cardsChosen[0] == cardsChosen[1]) {
+    alert('You found a pair!')
+    cards[chosenCardsIds[0]].setAttribute('src', 'assets/images/memory/animals/');
+    cards[chosenCardsIds[1]].setAttribute('src', 'assets/images/memory/animals/');
+    cards[cardschosen[0]].removeEventListener('click', flipCard);
+    cards[cardschosen[1]].removeEventListener('click', flipCard);
+   }
+}
+
+function flipCard() {
+    const cardId = this.getAttribute('data-id')
+    cardArray[cardId].name
+    cardsChosen.push(cardArray[cardId].name);
+    cardsChosenIds.push(cardId);
+    console.log(cardsChosen);
+    console.log(cardsChosenIds);
+    this.setAttribute('src', cardArray[cardId].img);
+    if (cardsChosen.length === 2){
+        setTimeout( checkMatch, 500);
+    }
+}
 
 
 

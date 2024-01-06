@@ -126,6 +126,11 @@
     background-color: rgb(245, 210, 149);
 }
 
+.game-container,
+.score {
+    padding: 10px;
+}
+
 .memory-row-width {
     max-width: 900px;
     margin: auto;
@@ -290,6 +295,9 @@
 
     .sm-results {
         padding-top: 20px;
+    }
+    .grid-item {
+        margin: 2px;
     }
 }
 
