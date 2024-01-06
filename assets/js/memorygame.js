@@ -7,10 +7,10 @@ const cardArray = [
         name: 'cat',
         img: 'assets/images/memory/animals/cat.png'
     },
-    {
-        name: 'cockerel',
-        img: 'assets/images/memory/animals/cock.png'
-    },
+    // {
+    //     name: 'cockerel',
+    //     img: 'assets/images/memory/animals/cock.png'
+    // },
     {
         name: 'dear',
         img: 'assets/images/memory/animals/dear.png'
@@ -71,10 +71,10 @@ const cardArray = [
         name: 'cat',
         img: 'assets/images/memory/animals/cat.png'
     },
-    {
-        name: 'cockerel',
-        img: 'assets/images/memory/animals/cock.png'
-    },
+    // {
+    //     name: 'cockerel',
+    //     img: 'assets/images/memory/animals/cock.png'
+    // },
     {
         name: 'dear',
         img: 'assets/images/memory/animals/dear.png'
@@ -134,11 +134,12 @@ cardArray.sort(() => 0.5 - Math.random())
 const gridDisplay = document.querySelector('#grid')
 
 function createBoard() {
-    for (let i = 0; i < 18; i++) {
-        const card = document.createElement('img')
-        card.setAttribute('src', 'assets/images/memory/animals/wolf.png')
-        card.setAttribute('data-id', i)
-        gridDisplay.appendChild(card)
+    for (let i = 0; i < cardArray.length; i++) {
+        const card = document.createElement('img');
+        card.setAttribute('src', 'assets/images/memory/question-card3.png');
+        card.setAttribute('data-id', i);
+        card.classList.add('grid-item', 'img-fluid');
+        gridDisplay.appendChild(card);
     }
 }
 

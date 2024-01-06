@@ -119,11 +119,22 @@
     font-size: 25px;
 }
 
-/* -------------------------------- index buttons */
+/* -------------------------------- Memory Game */
 
 .memory-body {
     font-family: 'Belanosima', sans-serif;
     background-color: rgb(245, 210, 149);
+}
+
+.memory-row-width {
+    max-width: 900px;
+    margin: auto;
+}
+
+.grid-item {
+    width: 15%; /* Make each image take up 100% of the width of its container */
+    height: auto; /* Maintain the aspect ratio */
+    margin: 5px; /* Optional: Add margin between images */
 }
 
 /* -------------------------------- Modals  */
