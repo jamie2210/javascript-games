@@ -132,8 +132,9 @@ const cardArray = [
 cardArray.sort(() => 0.5 - Math.random())
 
 const gridDisplay = document.querySelector('#grid')
-const cardsChosen = []
-const cardsChosenIds = []
+let cardsChosen = []
+let cardsChosenIds = []
+const cardsWon = []
 
 function createBoard() {
     for (let i = 0; i < cardArray.length; i++) {
@@ -150,14 +151,22 @@ createBoard()
 
 function checkMatch() {
     const cards = document.querySelectorAll('#grid img')
+    const optionOneId = cardsChosenIds[0]
+    const optionTwoId = cardsChosenIds[1]
     console.log('check for match!')
-   if (cardsChosen[0] == cardsChosen[1]) {
-    alert('You found a pair!')
-    cards[chosenCardsIds[0]].setAttribute('src', 'assets/images/memory/animals/');
-    cards[chosenCardsIds[1]].setAttribute('src', 'assets/images/memory/animals/');
-    cards[cardschosen[0]].removeEventListener('click', flipCard);
-    cards[cardschosen[1]].removeEventListener('click', flipCard);
+    if (optionOneId == optionTwoId) {
+        alert('You found a pair!')
+    }
+    if (cardsChosen[0] == cardsChosen[1]) {
+    cards[optionOneId].classList.add('transparent');
+    cards[optionTwoId].classList.add('transparent');
+    console.log('Transparent class added to cards');
+    cards[optionOneId].removeEventListener('click', flipCard);
+    cards[optionTwoId].removeEventListener('click', flipCard);
+    cardsWon.push(cardsChosen);
    }
+   cardsChosen = [];
+   cardsChosenIds = [];
 }
 
 function flipCard() {

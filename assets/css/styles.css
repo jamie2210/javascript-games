@@ -142,6 +142,10 @@
     margin: 5px; /* Optional: Add margin between images */
 }
 
+.transparent {
+    opacity: 0.5;
+}
+
 /* -------------------------------- Modals  */
 
 
