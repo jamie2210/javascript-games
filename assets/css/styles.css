@@ -9,7 +9,7 @@
     margin: auto;
 }
 
-/* -------------------------------- buttons */
+/* -------------------------------- index buttons */
 
 .game-btn {
     width: 200px;
@@ -117,6 +117,13 @@
 .choice-display p {
     font-weight:300;
     font-size: 25px;
+}
+
+/* -------------------------------- index buttons */
+
+.memory-body {
+    font-family: 'Belanosima', sans-serif;
+    background-color: rgb(245, 210, 149);
 }
 
 /* -------------------------------- Modals  */
