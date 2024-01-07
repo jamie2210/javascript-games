@@ -146,6 +146,18 @@
     opacity: 0.5;
 }
 
+.alert-container {
+    padding: 7px 10px 4px 10px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Optional: Add a subtle box shadow */
+    display: none;
+}
+  
+.alert-box {
+    height: 20px;
+  }
+
 /* -------------------------------- Modals  */
 
 
@@ -302,6 +314,18 @@
     }
     .grid-item {
         margin: 2px;
+    }
+    #alert {
+        font-size: large;
+    }
+    .memory-row-width .sub-title {
+        font-size: large;
+    }
+    .alert-box {
+        height: 10px;
+    }
+    .score {
+        font-size: large;
     }
 }
 

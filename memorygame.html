@@ -53,12 +53,17 @@
         </nav>  
     </header>
     <div class="memory-row-width">
-        <div class="title">
-            <h1 class="text-center title">Memory Game</h1>
-            <p class="text-center sub-title"></p>
+        <div class="title text-center">
+            <h1 class="title">Memory Game</h1>
+            <p class="sub-title">Click on the ? to guess the pairs.</p>
+            <div class="alert-box">
+                <div class="alert-container">
+                    <h2 id="alert"></h2>
+                </div>
+            </div>
         </div>
         <!-- Main Content -->
-        <h3 class="score">Score: <span id="result"></span></h3>
+        <h3 class="score">Pairs left: <span id="pairs"></span></h3>
             <div class="text-center game-container">
                 <div id="grid"></div>
             </div>

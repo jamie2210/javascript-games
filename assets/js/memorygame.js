@@ -124,6 +124,9 @@ const cardArray = [
 cardArray.sort(() => 0.5 - Math.random())
 
 const gridDisplay = document.querySelector('#grid')
+const pairsLeft = document.querySelector('#pairs')
+const alertText = document.querySelector('#alert')
+const alertCont = document.querySelector('.alert-container')
 let cardsChosen = []
 let cardsChosenIds = []
 const cardsWon = []
@@ -136,6 +139,7 @@ function createBoard() {
         card.classList.add('grid-item', 'img-fluid');
         card.addEventListener('click', flipCard)
         gridDisplay.appendChild(card);
+        pairsLeft.textContent = cardArray.length / 2;
     }
 }
 
@@ -148,7 +152,12 @@ function checkMatch() {
     console.log('check for match!')
         
     if (cardsChosen[0] == cardsChosen[1]) {
-        alert('You found a pair!')
+        alertText.textContent = 'You found a pair!';
+        alertCont.style.display = 'inline-block';
+        setTimeout(() => {
+            alertText.textContent = '';
+            alertCont.style.display = 'none';
+        }, 2500);
     cards[optionOneId].classList.add('transparent');
     cards[optionTwoId].classList.add('transparent');
     console.log('Transparent class added to cards');
@@ -158,8 +167,14 @@ function checkMatch() {
    } else {
     cards[optionOneId].setAttribute('src', 'assets/images/memory/question-card3.png');
     cards[optionTwoId].setAttribute('src', 'assets/images/memory/question-card3.png');
-    alert('Sorry, try again!')
+    alertText.textContent = 'Sorry try again!';
+    alertCont.style.display = 'inline-block';
+        setTimeout(() => {
+            alertText.textContent = '';
+            alertCont.style.display = 'none';
+        }, 2500);
    }
+   pairsLeft.textContent = cardArray.length / 2 - cardsWon.length;
    cards[optionOneId].classList.remove('flipped');
    cards[optionTwoId].classList.remove('flipped');
    cardsChosen = [];
@@ -172,7 +187,12 @@ function flipCard() {
 
     if (this.classList.contains('flipped')) {
         console.log('Same card clicked!');
-        alert('You clicked on the same card!');
+        alertText.textContent = 'You clicked on the same card!';
+        alertCont.style.display = 'inline-block';
+        setTimeout(() => {
+            alertText.textContent = '';
+            alertCont.style.display = 'none';
+        }, 2500);
         // Briefly show the image and then flip it back
         this.setAttribute('src', cardArray[cardId].img);
         setTimeout(() => {
@@ -180,7 +200,7 @@ function flipCard() {
             this.classList.remove('flipped');
             cardsChosen = [];
             cardsChosenIds = [];
-        }, 500);
+        }, 1000);
         return;
     }
     
