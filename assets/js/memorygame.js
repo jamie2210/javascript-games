@@ -7,17 +7,13 @@ const cardArray = [
         name: 'cat',
         img: 'assets/images/memory/animals/cat.png'
     },
-    // {
-    //     name: 'cockerel',
-    //     img: 'assets/images/memory/animals/cock.png'
-    // },
     {
         name: 'dear',
         img: 'assets/images/memory/animals/dear.png'
     },
     {
-        name: 'bear',
-        img: 'assets/images/memory/animals/bear.png'
+        name: 'dog',
+        img: 'assets/images/memory/animals/dog.png'
     },
     {
         name: 'donkey',
@@ -71,17 +67,13 @@ const cardArray = [
         name: 'cat',
         img: 'assets/images/memory/animals/cat.png'
     },
-    // {
-    //     name: 'cockerel',
-    //     img: 'assets/images/memory/animals/cock.png'
-    // },
     {
         name: 'dear',
         img: 'assets/images/memory/animals/dear.png'
     },
     {
-        name: 'bear',
-        img: 'assets/images/memory/animals/bear.png'
+        name: 'dog',
+        img: 'assets/images/memory/animals/dog.png'
     },
     {
         name: 'donkey',
@@ -154,34 +146,56 @@ function checkMatch() {
     const optionOneId = cardsChosenIds[0]
     const optionTwoId = cardsChosenIds[1]
     console.log('check for match!')
-    if (optionOneId == optionTwoId) {
-        alert('You found a pair!')
-    }
+        
     if (cardsChosen[0] == cardsChosen[1]) {
+        alert('You found a pair!')
     cards[optionOneId].classList.add('transparent');
     cards[optionTwoId].classList.add('transparent');
     console.log('Transparent class added to cards');
     cards[optionOneId].removeEventListener('click', flipCard);
     cards[optionTwoId].removeEventListener('click', flipCard);
     cardsWon.push(cardsChosen);
+   } else {
+    cards[optionOneId].setAttribute('src', 'assets/images/memory/question-card3.png');
+    cards[optionTwoId].setAttribute('src', 'assets/images/memory/question-card3.png');
+    alert('Sorry, try again!')
    }
+   cards[optionOneId].classList.remove('flipped');
+   cards[optionTwoId].classList.remove('flipped');
    cardsChosen = [];
    cardsChosenIds = [];
 }
 
+
 function flipCard() {
     const cardId = this.getAttribute('data-id')
+
+    if (this.classList.contains('flipped')) {
+        console.log('Same card clicked!');
+        alert('You clicked on the same card!');
+        // Briefly show the image and then flip it back
+        this.setAttribute('src', cardArray[cardId].img);
+        setTimeout(() => {
+            this.setAttribute('src', 'assets/images/memory/question-card3.png');
+            this.classList.remove('flipped');
+            cardsChosen = [];
+            cardsChosenIds = [];
+        }, 500);
+        return;
+    }
+    
     cardArray[cardId].name
     cardsChosen.push(cardArray[cardId].name);
     cardsChosenIds.push(cardId);
     console.log(cardsChosen);
     console.log(cardsChosenIds);
+    console.log(cardId);
+    this.classList.add('flipped');
     this.setAttribute('src', cardArray[cardId].img);
     if (cardsChosen.length === 2){
-        setTimeout( checkMatch, 500);
+        setTimeout(checkMatch, 500);
     }
 }
-
 
 
 
