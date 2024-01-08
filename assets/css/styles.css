@@ -140,6 +140,18 @@
     width: 15%; /* Make each image take up 100% of the width of its container */
     height: auto; /* Maintain the aspect ratio */
     margin: 5px; /* Optional: Add margin between images */
+    transition: transform 1s ease;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    perspective: 1000px; /* Add perspective for a 3D effect */
+}
+
+/* .pre-flip {
+    transform: rotateY(180deg);
+} */
+
+.flipped {
+    transform: rotateY(180deg);
 }
 
 .transparent {

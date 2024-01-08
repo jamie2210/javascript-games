@@ -138,7 +138,7 @@ function createBoard() {
         const card = document.createElement('img');
         card.setAttribute('src', 'assets/images/memory/question-card3.png');
         card.setAttribute('data-id', i);
-        card.classList.add('grid-item', 'img-fluid');
+        card.classList.add('grid-item', 'img-fluid', 'pre-flip');
         card.addEventListener('click', flipCard)
         gridDisplay.appendChild(card);
         pairsLeft.textContent = cardArray.length / 2;
@@ -179,6 +179,8 @@ function checkMatch() {
    pairsLeft.textContent = cardArray.length / 2 - cardsWon.length;
    cards[optionOneId].classList.remove('flipped');
    cards[optionTwoId].classList.remove('flipped');
+   cards[optionOneId].classList.add('preflip');
+   cards[optionTwoId].classList.add('preflip');
    cardsChosen = [];
    cardsChosenIds = [];
 
@@ -193,7 +195,6 @@ function flipCard() {
     const cardId = this.getAttribute('data-id')
 
     if (this.classList.contains('flipped')) {
-        console.log('Same card clicked!');
         alertText.textContent = 'You clicked on the same card!';
         alertCont.style.display = 'inline-block';
         setTimeout(() => {
@@ -203,8 +204,9 @@ function flipCard() {
         // Briefly show the image and then flip it back
         this.setAttribute('src', cardArray[cardId].img);
         setTimeout(() => {
-            this.setAttribute('src', 'assets/images/memory/question-card3.png');
+            this.classList.add('pre-flip');
             this.classList.remove('flipped');
+            this.setAttribute('src', 'assets/images/memory/question-card3.png');
             cardsChosen = [];
             cardsChosenIds = [];
         }, 1000);
@@ -218,6 +220,7 @@ function flipCard() {
     console.log(cardsChosenIds);
     console.log(cardId);
     this.classList.add('flipped');
+    this.classList.remove('pre-flip');
     this.setAttribute('src', cardArray[cardId].img);
     if (cardsChosen.length === 2){
         setTimeout(checkMatch, 500);
