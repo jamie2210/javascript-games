@@ -182,14 +182,14 @@
     width: auto;
     height: auto;
     border: 6px solid #d8d8d8;;
-    background-color: rgb(56, 193, 138);
+    background-color: rgb(219, 169, 84);
     position: absolute;
     padding-bottom: 20px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    display: none;
+    display: block;
     animation:fadein 1s;
 }
 
@@ -219,34 +219,6 @@
     display: none;
     animation:fadein 1s;
 }
-
-.lose-modal-mg {
-    max-width: 500px;
-    width: auto;
-    height: auto;
-    border: 6px solid #d8d8d8;;
-    background-color: rgb(170, 60, 60);
-    position: absolute;
-    padding-bottom: 20px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    display: none;
-    animation:fadein 1s;
-}
-
-.lose-background{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100vw;
-    height:100vh;
-    background-color:rgba(0,0,0,0.7);
-    display: none;
-    padding: 30px;
-}
-
 
 
 .modal-icon {

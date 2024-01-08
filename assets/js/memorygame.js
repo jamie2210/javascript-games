@@ -123,10 +123,12 @@ const cardArray = [
 
 cardArray.sort(() => 0.5 - Math.random())
 
-const gridDisplay = document.querySelector('#grid')
-const pairsLeft = document.querySelector('#pairs')
-const alertText = document.querySelector('#alert')
-const alertCont = document.querySelector('.alert-container')
+const gridDisplay = document.querySelector('#grid');
+const pairsLeft = document.querySelector('#pairs');
+const alertText = document.querySelector('#alert');
+const alertCont = document.querySelector('.alert-container');
+const memoryModal = document.querySelector('#win-modal-mg');
+const winBackground = document.querySelector('.win-background');
 let cardsChosen = []
 let cardsChosenIds = []
 const cardsWon = []
@@ -179,6 +181,11 @@ function checkMatch() {
    cards[optionTwoId].classList.remove('flipped');
    cardsChosen = [];
    cardsChosenIds = [];
+
+   if (cardsWon.length === cardArray.length/2) {
+        memoryModal.style.display = 'block';
+        winBackground.style.display = 'block';
+   }
 }
 
 
@@ -216,6 +223,22 @@ function flipCard() {
         setTimeout(checkMatch, 500);
     }
 }
+
+/**
+* Resets everything on the page apart from the Wins and Losses scores.
+* Closes modal.
+*/
+    function reset() {
+    location.reload();
+}
+
+/**
+ * Return use home
+ */
+    function home() {
+    window.location.href = 'index.html';
+}
+
 
 
 

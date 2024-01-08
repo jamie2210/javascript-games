@@ -2,12 +2,12 @@ document.addEventListener("DOMContentLoaded", function() {
    
   });
 
-const computerChoiceDisplay = document.getElementById('computer-choice')
-const userChoiceDisplay = document.getElementById('user-choice')
-const resultDisplay = document.getElementById('result')
-const possibleChoices = document.querySelectorAll('.rps-icon')
-const userScore = document.getElementById('user-score')
-const computerScore = document.getElementById('computer-score')
+const computerChoiceDisplay = document.getElementById('computer-choice');
+const userChoiceDisplay = document.getElementById('user-choice');
+const resultDisplay = document.getElementById('result');
+const possibleChoices = document.querySelectorAll('.rps-icon');
+const userScore = document.getElementById('user-score');
+const computerScore = document.getElementById('computer-score');
 const winModal = document.getElementById('win-modal');
 const winBackground = document.getElementById('win-background');
 const loseModal = document.getElementById('lose-modal');
