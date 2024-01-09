@@ -179,8 +179,8 @@ function checkMatch() {
    pairsLeft.textContent = cardArray.length / 2 - cardsWon.length;
    cards[optionOneId].classList.remove('flipped');
    cards[optionTwoId].classList.remove('flipped');
-   cards[optionOneId].classList.add('preflip');
-   cards[optionTwoId].classList.add('preflip');
+   cards[optionOneId].classList.add('pre-flip');
+   cards[optionTwoId].classList.add('pre-flip');
    cardsChosen = [];
    cardsChosenIds = [];
 
@@ -203,9 +203,10 @@ function flipCard() {
         }, 2500);
         // Briefly show the image and then flip it back
         this.setAttribute('src', cardArray[cardId].img);
+        
         setTimeout(() => {
-            this.classList.add('pre-flip');
-            this.classList.remove('flipped');
+            this.classList.toggle('flipped');
+            this.classList.toggle('pre-flip')
             this.setAttribute('src', 'assets/images/memory/question-card3.png');
             cardsChosen = [];
             cardsChosenIds = [];
@@ -220,7 +221,7 @@ function flipCard() {
     console.log(cardsChosenIds);
     console.log(cardId);
     this.classList.add('flipped');
-    this.classList.remove('pre-flip');
+    this.classList.toggle('pre-flip');
     this.setAttribute('src', cardArray[cardId].img);
     if (cardsChosen.length === 2){
         setTimeout(checkMatch, 500);
