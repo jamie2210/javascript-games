@@ -153,13 +153,26 @@
 }
 
 .pre-flip { 
-    transform: scaleX(-1);
+    transform: rotateY(0deg);
 }
 
-.grid-item.flipped img {
-    transform: rotateY(180deg);
+.flipped {
+    width: 15%; /* Make each image take up 100% of the width of its container */
+    height: auto; /* Maintain the aspect ratio */
+    margin: 5px; /* Optional: Add margin between images */
+    transition: transform 1s ease;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    perspective: 1000px; 
     backface-visibility: hidden;
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    transform: rotateY(180deg);
 }
+
+/* .flipped img {
+    
+} */
 
 .transparent {
     opacity: 0.5;

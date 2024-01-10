@@ -181,6 +181,8 @@ function checkMatch() {
    cards[optionTwoId].classList.remove('flipped');
    cards[optionOneId].classList.add('pre-flip');
    cards[optionTwoId].classList.add('pre-flip');
+   cards[optionOneId].classList.add('grid-item');
+   cards[optionTwoId].classList.add('grid-item');
    cardsChosen = [];
    cardsChosenIds = [];
 
@@ -206,7 +208,8 @@ function flipCard() {
         
         setTimeout(() => {
             this.classList.toggle('flipped');
-            this.classList.toggle('pre-flip')
+            this.classList.toggle('pre-flip');
+            this.classList.add('grid-item');
             this.setAttribute('src', 'assets/images/memory/question-card3.png');
             cardsChosen = [];
             cardsChosenIds = [];
@@ -222,6 +225,7 @@ function flipCard() {
     console.log(cardId);
     this.classList.add('flipped');
     this.classList.toggle('pre-flip');
+    this.classList.remove('grid-item');
     this.setAttribute('src', cardArray[cardId].img);
     if (cardsChosen.length === 2){
         setTimeout(checkMatch, 500);
