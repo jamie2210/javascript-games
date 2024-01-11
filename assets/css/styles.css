@@ -141,15 +141,15 @@
 }
 
 .grid-item {
-    width: 15%; /* Make each image take up 100% of the width of its container */
-    height: auto; /* Maintain the aspect ratio */
-    margin: 5px; /* Optional: Add margin between images */
+    width: 15%; 
+    height: auto; 
+    margin: 5px;
     transition: transform 1s ease;
     transform-style: preserve-3d;
     cursor: pointer;
-    perspective: 1000px; /* Add perspective for a 3D effect */
+    /* perspective: 1000px;
     backface-visibility: hidden;
-    transform: rotateY(180deg);
+    transform: rotateY(180deg); */
 }
 
 .pre-flip { 
@@ -157,17 +157,14 @@
 }
 
 .flipped {
-    width: 15%; /* Make each image take up 100% of the width of its container */
-    height: auto; /* Maintain the aspect ratio */
-    margin: 5px; /* Optional: Add margin between images */
+    width: 15%; 
+    height: auto;
+    margin: 5px; 
     transition: transform 1s ease;
     transform-style: preserve-3d;
     cursor: pointer;
-    perspective: 1000px; 
-    backface-visibility: hidden;
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-    transform: rotateY(180deg);
+    /* perspective: 1000px; 
+    transform: rotateY(180deg); */
 }
 
 /* .flipped img {

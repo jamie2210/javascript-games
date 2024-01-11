@@ -159,7 +159,7 @@ function checkMatch() {
         setTimeout(() => {
             alertText.textContent = '';
             alertCont.style.display = 'none';
-        }, 2500);
+        }, 2000);
     cards[optionOneId].classList.add('transparent');
     cards[optionTwoId].classList.add('transparent');
     console.log('Transparent class added to cards');
@@ -167,14 +167,16 @@ function checkMatch() {
     cards[optionTwoId].removeEventListener('click', flipCard);
     cardsWon.push(cardsChosen);
    } else {
+        setTimeout(() => {
     cards[optionOneId].setAttribute('src', 'assets/images/memory/question-card3.png');
-    cards[optionTwoId].setAttribute('src', 'assets/images/memory/question-card3.png');
+    cards[optionTwoId].setAttribute('src', 'assets/images/memory/question-card3.png');          
+        }, 1000);
     alertText.textContent = 'Sorry try again!';
     alertCont.style.display = 'inline-block';
         setTimeout(() => {
             alertText.textContent = '';
             alertCont.style.display = 'none';
-        }, 2500);
+        }, 1500);
    }
    pairsLeft.textContent = cardArray.length / 2 - cardsWon.length;
    cards[optionOneId].classList.remove('flipped');
