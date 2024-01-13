@@ -4,17 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <!-- Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Belanosima&display=swap" rel="stylesheet">
     <!-- Boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <title>Memory Game</title>
+    <title>Whac A Mole</title>
 </head>
-<body class="memory-body">
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
@@ -50,45 +45,21 @@
                     </ul>
                 </div>
             </div>
-        </nav>  
+        </nav>          
     </header>
-    <div class="memory-row-width">
-        <div class="title text-center">
-            <h1 class="title">Memory Game</h1>
-            <p class="sub-title">Click on the ? to guess the pairs.</p>
-            <div class="alert-box">
-                <div class="alert-container">
-                    <h2 id="alert"></h2>
+    <body>
+        <div class="row-width">
+            <div class="row">
+                <div class="col-12 container text-center">
+                    <h1 class="title">Whac A Mole</h1>
                 </div>
             </div>
         </div>
-        <!-- Main Content -->
-        <h4 class="score">Pairs left: <span id="pairs"></span></h4>
-            <div class="text-center game-container">
-                <div id="grid"></div>
-            </div>
-        
-        <!-- Win Modal -->
-        <div class="win-background" id="win-background">
-            <div class="win-modal-mg" id="win-modal-mg">
-                <div class="row">
-                    <div class="col-12 container-fluid">
-                        <div class="modal-body text-center">
-                            <img class="modal-icon" alt="image of a cartton thumbs up hand" src="assets/images/rps/thumbs-up.png">
-                            <h1>You found all the pairs!!</h1>
-                            <!-- <p>Wins: <span class="user-wins">0</span> Losses: <span class="user-losses">0</span></p> -->
-                            <button class="close-button" onClick="reset()">Play Again</button>
-                            <button class="close-button" onClick="home()">Go Home</a></button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-     <!-- Javascript Tags -->
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
-     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-    </script>
-    <script src="assets/js/memorygame.js"></script>
-</body>
+
+        <!-- Javascript Tags -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        </script>
+        <script src="assets/js/index.js"></script>
+    </body>
 </html>
