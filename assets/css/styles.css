@@ -192,21 +192,42 @@
 }
 
 .whac-row-width {
-        max-width: 900px;
-        margin: auto;
+    margin: auto;
+    max-width: 700px;
+}
+
+.whac-text {
+    margin-left: 20px;
 }
 
 .whac-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
+    gap: 10px; /* Adjust the gap between squares */
+    padding: 20px;
+    width: 600px;
+    margin: auto;
 }
 
 .square {
-    height: 25vh;
-    width: 25vh;
-    border: solid black 1px;
-    margin: 5px;
+    border: 3px solid #514030;
+    border-radius: 5%;
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(218, 192, 157);
+    width: 180px;
+    height: 180px;
+    position: relative;
+}
+
+.mole {
+    max-width: 80%;
+    height: auto;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 /* -------------------------------- Modals  */
@@ -301,6 +322,16 @@
     }
 }
 
+@media (max-width: 665px) {
+    .square {
+        width: 150px;
+        height: 150px;
+    }
+    .whac-grid {
+        width: 500px;
+    }
+}
+
 @media (max-width: 573px) {
     .lose-modal,
     .win-modal {
@@ -350,12 +381,62 @@
     .score {
         font-size: large;
     }
+    .square {
+        width: 130px;
+        height: 130px;
+    }
+    .whac-grid {
+        width: 450px;
+    }
 }
 
-@media (max-width: 350px) {
-        
+@media (max-width: 485px) {
+    .square {
+        width: 130px;
+        height: 130px;
+    }
+    .whac-grid {
+        width: 400px;
+        padding: 0;
+    }
+}
+
+@media (max-width: 485px) {
+    .square {
+        width: 110px;
+        height: 110px;
+    }
+    .whac-grid {
+        width: 350px;
+        padding: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .square {
+        width: 100px;
+        height: 100px;
+    }
+    .whac-grid {
+        width: 325px;
+        padding: 0;
+    }
+    .whac-text {
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 350px) {   
     .lose-modal,
     .win-modal {
         max-width: 275px;
+    }
+    .square {
+        width: 90px;
+        height: 90px;
+    }
+    .whac-grid {
+        width: 300px;
+        padding: 0;
     }
 }
