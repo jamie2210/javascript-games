@@ -1,5 +1,9 @@
 /* -------------------------------- body */
 
+.body-font {
+    font-family: 'Belanosima', sans-serif;
+}
+
 .title {
     margin: 30px;
 }
@@ -57,8 +61,7 @@
 
 /* -------------------------------- Rock Paper Scissors */
 
-.rps-body {
-    font-family: 'Belanosima', sans-serif;
+.rps-colour {
     background-color: rgb(118, 225, 182);
 }
 
@@ -121,8 +124,7 @@
 
 /* -------------------------------- Memory Game */
 
-.memory-body {
-    font-family: 'Belanosima', sans-serif;
+.memory-colour {
     background-color: rgb(245, 210, 149);
 }
 
@@ -167,10 +169,6 @@
     transform: rotateY(180deg); */
 }
 
-/* .flipped img {
-    
-} */
-
 .transparent {
     opacity: 0.5;
 }
@@ -185,7 +183,31 @@
   
 .alert-box {
     height: 20px;
-  }
+}
+
+/* -------------------------------- Whac A Mole  */
+
+.whac-colour {
+    background-color: rgb(155, 164, 241);
+}
+
+.whac-row-width {
+        max-width: 900px;
+        margin: auto;
+}
+
+.whac-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.square {
+    height: 25vh;
+    width: 25vh;
+    border: solid black 1px;
+    margin: 5px;
+}
 
 /* -------------------------------- Modals  */
 
