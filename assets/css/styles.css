@@ -228,11 +228,17 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    visibility: hidden;
 }
 
-.visible {
-    visibility: visible;
+.visible-no {
+    max-width: 80%;
+    height: auto;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
 }
 
 /* -------------------------------- Modals  */
