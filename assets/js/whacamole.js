@@ -28,12 +28,24 @@ function randomSquare() {
     let randomIndex = Math.floor(Math.random() * 9);
     let randomSquare = squares[randomIndex];
     
-    const selectedImage = randomSquare.querySelector('img');
+    squares.forEach(square => {
 
-    if (selectedImage) {
-        selectedImage.classList.add('mole');
-        selectedImage.classList.remove('visible-no');
-    }
+        const imageElement = square.querySelector('img');
+
+        if (imageElement) {
+            if (square !== randomSquare) {
+                imageElement.classList.add('visible-no');
+            } else {
+                imageElement.classList.add('mole');
+                imageElement.classList.remove('visible-no');
+            }
+        }
+    });
 }
 
-randomSquare()
+function moveMole() {
+    let timerId = null
+    timerId = setInterval(randomSquare, 500)
+}
+
+moveMole()
