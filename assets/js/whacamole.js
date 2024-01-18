@@ -1,20 +1,13 @@
 const squares = document.querySelectorAll('.square')
 const mole = document.querySelector('.mole')
 const timeLeft = document.querySelector('#time-left')
-const score = document.querySelector('#score')
+const score = document.querySelector('#whac-score')
 
 
-let result = 0
-
-// function randomSquare() {
-//     squares.forEach(square => {
-//         square.classList.remove('visibile')
-//     });
-
-//     let randomSquare = squares[Math.floor(Math.random() * 9)]
-//     randomSquare.classList.add('visible')
-//     randomSquare.classList.remove('mole')
-// }
+let result = 0;
+let hitPosition;
+let currentTime = 61;
+let countDownTimerId;
 
 function randomSquare() {
     squares.forEach(square => {
@@ -38,14 +31,42 @@ function randomSquare() {
             } else {
                 imageElement.classList.add('mole');
                 imageElement.classList.remove('visible-no');
+                hitPosition = imageElement;
             }
         }
     });
 }
 
+squares.forEach(square => {
+    const imageElement = square.querySelector('img');
+    
+    imageElement.addEventListener('mousedown', () => {
+        if (imageElement == hitPosition) {
+            result++;
+            score.textContent = result;
+            hitPosition = null;
+        }
+    })
+})
+
 function moveMole() {
     let timerId = null
-    timerId = setInterval(randomSquare, 500)
+    timerId = setInterval(randomSquare, 700)
 }
 
 moveMole()
+
+function countDown() {
+    currentTime--
+    timeLeft.textContent = currentTime;
+
+    if (currentTime === 0) {
+        clearInterval(countDownTimerId)
+        alert('GAME OVER! Your final score is' + result)
+    }
+}
+
+countDownTimerId = setInterval(countDown, 1000);
+
+
+countDown()
