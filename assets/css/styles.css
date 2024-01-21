@@ -191,6 +191,24 @@
     background-color: rgb(155, 164, 241);
 }
 
+.start-button {
+    background-color: rgb(91, 100, 179);
+    border: 2px solid #d8d8d8;
+    border-radius: 5%;
+    padding: 10px 15px;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.start-button:hover {
+    transform: scale(1.1);
+}
+
+.start-button:active {
+    background-color: rgb(47, 53, 116);
+    transform: scale(1);
+}
+
 .whac-row-width {
     margin: auto;
     max-width: 700px;
@@ -283,6 +301,14 @@
 .modal-mg {
     background-color: rgb(219, 169, 84);
     padding: 15px;
+}
+
+.whac-modal {
+    background-color: rgb(91, 100, 179);
+}
+
+.score-text {
+    padding-bottom: 10px;
 }
 
 .modal-icon {

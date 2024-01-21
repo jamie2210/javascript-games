@@ -2,6 +2,9 @@ const squares = document.querySelectorAll('.square')
 const mole = document.querySelector('.mole')
 const timeLeft = document.querySelector('#time-left')
 const score = document.querySelector('#whac-score')
+const modalScore = document.querySelector('#modal-score')
+const modalBackground = document.getElementById('modal-background');
+const winModal = document.getElementById('whac-modal');
 
 
 let result = 0;
@@ -54,8 +57,6 @@ function moveMole() {
     timerId = setInterval(randomSquare, 600)
 }
 
-moveMole()
-
 function countDown() {
     currentTime--
     timeLeft.textContent = currentTime;
@@ -63,11 +64,34 @@ function countDown() {
     if (currentTime === 0) {
         clearInterval(countDownTimerId)
         clearInterval(timerId)
-        alert('GAME OVER! Your final score is' + result)
+        winModal.style.display = "block";
+        modalBackground.style.display = "block";
+        modalScore.textContent = result;
     }
 }
 
-countDownTimerId = setInterval(countDown, 1000);
 
 
-countDown()
+
+function startGame() {
+    setTimeout(() => {
+        countDown()
+        moveMole()
+        countDownTimerId = setInterval(countDown, 1000);
+    }, 3000);
+}
+
+/**
+* Resets everything on the page apart from the Wins and Losses scores.
+* Closes modal.
+*/
+function reset() {
+    location.reload();
+  }
+  
+  /**
+  * Return use home
+  */
+  function home() {
+    window.location.href = 'index.html';
+  }
