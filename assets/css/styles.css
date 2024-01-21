@@ -260,7 +260,8 @@
     animation:fadein 1s;
 }
 
-.modal-background{
+.modal-background,
+.lose-modal-background {
     position:fixed;
     top:0;
     left:0;
@@ -281,6 +282,7 @@
 
 .modal-mg {
     background-color: rgb(219, 169, 84);
+    padding: 15px;
 }
 
 .modal-icon {
