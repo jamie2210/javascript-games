@@ -60,7 +60,7 @@
             </div>
             <div class="whac-text">
                 <h3>Your Score: <span id="whac-score">0</span></h3>
-                <h3>Time Left: <span id="time-left"></span><span> (seconds)</span></h3>
+                <h3>Time Left: <span id="time-left"></span><span>s</span></h3>
             </div>
             <div class="whac-grid">
                 <div class="square">
@@ -89,6 +89,23 @@
                 </div>
                 <div class="square">
                     <img class="mole visible-no" id="square-9" src="assets/images/whac/mole.png">
+                </div>
+            </div>
+        </div>
+
+        <!-- Score Modal -->
+        <div class="modal-background" id="modal-background">
+            <div class="win-modal whac-modal container-fluid" id="lose-modal">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="modal-body text-center">
+                            <img class="modal-icon" alt="image of a cartoon thumbs down hand" src="assets/images/rps/thumbs-down.png">
+                            <h1>You Lose!!!</h1>
+                            <!-- <p>Wins: <span class="user-wins">0</span> Losses: <span class="user-losses">0</span></p> -->
+                            <button class="close-button" onClick="reset()">Play Again</button>
+                            <button class="close-button" onClick="home()">Go Home</a></button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

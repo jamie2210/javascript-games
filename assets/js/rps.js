@@ -8,10 +8,10 @@ const resultDisplay = document.getElementById('result');
 const possibleChoices = document.querySelectorAll('.rps-icon');
 const userScore = document.getElementById('user-score');
 const computerScore = document.getElementById('computer-score');
+const modalBackground = document.getElementById('modal-background');
 const winModal = document.getElementById('win-modal');
-const winBackground = document.getElementById('win-background');
 const loseModal = document.getElementById('lose-modal');
-const loseBackground = document.getElementById('lose-background');
+
 let userScoreValue = 0;
 let computerScoreValue = 0;
 let userChoice
@@ -91,7 +91,7 @@ function getResult() {
 function youWon() {
   if (userScoreValue === 3) {
   winModal.style.display = "block";
-  winBackground.style.display = "block";
+  modalBackground.style.display = "block";
   }
 }
 
@@ -101,7 +101,7 @@ function youWon() {
 function youLost() {
   if (computerScoreValue === 3) {
   loseModal.style.display = "block";
-  loseBackground.style.display = "block";
+  modalBackground.style.display = "block";
   }
 }
 

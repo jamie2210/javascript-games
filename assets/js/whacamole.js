@@ -7,6 +7,7 @@ const score = document.querySelector('#whac-score')
 let result = 0;
 let hitPosition;
 let currentTime = 61;
+let timerId = null;
 let countDownTimerId;
 
 function randomSquare() {
@@ -50,8 +51,7 @@ squares.forEach(square => {
 })
 
 function moveMole() {
-    let timerId = null
-    timerId = setInterval(randomSquare, 700)
+    timerId = setInterval(randomSquare, 600)
 }
 
 moveMole()
@@ -62,6 +62,7 @@ function countDown() {
 
     if (currentTime === 0) {
         clearInterval(countDownTimerId)
+        clearInterval(timerId)
         alert('GAME OVER! Your final score is' + result)
     }
 }

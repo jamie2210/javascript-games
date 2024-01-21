@@ -244,12 +244,12 @@
 /* -------------------------------- Modals  */
 
 
-.win-modal {
+.game-modal,
+.lose-game-modal {
     max-width: 500px;
     width: auto;
     height: auto;
-    border: 6px solid #d8d8d8;;
-    background-color: rgb(56, 193, 138);
+    border: 6px solid #d8d8d8;
     position: absolute;
     padding-bottom: 20px;
     top: 50%;
@@ -260,23 +260,7 @@
     animation:fadein 1s;
 }
 
-.win-modal-mg {
-    max-width: 500px;
-    width: auto;
-    height: auto;
-    border: 6px solid #d8d8d8;;
-    background-color: rgb(219, 169, 84);
-    position: absolute;
-    padding-bottom: 20px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    display: block;
-    animation:fadein 1s;
-}
-
-.win-background{
+.modal-background{
     position:fixed;
     top:0;
     left:0;
@@ -287,22 +271,17 @@
     padding: 30px;
 }
 
-.lose-modal {
-    max-width: 500px;
-    width: auto;
-    height: auto;
-    border: 6px solid #d8d8d8;;
-    background-color: rgb(170, 60, 60);
-    position: absolute;
-    padding-bottom: 20px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    display: none;
-    animation:fadein 1s;
+.win-modal-rps {
+    background-color: rgb(56, 193, 138);
 }
 
+.lose-modal-rps {
+    background-color: rgb(170, 60, 60);
+}
+
+.modal-mg {
+    background-color: rgb(219, 169, 84);
+}
 
 .modal-icon {
     margin: 20px;
