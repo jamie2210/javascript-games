@@ -1,10 +1,13 @@
-const squares = document.querySelectorAll('.square')
-const mole = document.querySelector('.mole')
-const timeLeft = document.querySelector('#time-left')
-const score = document.querySelector('#whac-score')
-const modalScore = document.querySelector('#modal-score')
+const squares = document.querySelectorAll('.square');
+const mole = document.querySelector('.mole');
+const timeLeft = document.querySelector('#time-left');
+const score = document.querySelector('#whac-score');
+const modalScore = document.querySelector('#modal-score');
 const modalBackground = document.getElementById('modal-background');
 const winModal = document.getElementById('whac-modal');
+const button = document.querySelector('.start-button');
+const startText = document.querySelector('.start-text');
+const startGameCount = document.querySelector('#start-game-count')
 
 
 let result = 0;
@@ -12,6 +15,7 @@ let hitPosition;
 let currentTime = 61;
 let timerId = null;
 let countDownTimerId;
+let startCountDown = 4;
 
 function randomSquare() {
     squares.forEach(square => {
@@ -70,15 +74,25 @@ function countDown() {
     }
 }
 
-
-
-
 function startGame() {
+    startCount();
     setTimeout(() => {
         countDown()
         moveMole()
         countDownTimerId = setInterval(countDown, 1000);
+        button.style.visibility = 'hidden';
     }, 3000);
+}
+
+function startCount() {
+    startCountDown--
+    startGameCount.textContent = startCountDown;
+    startText.style.display = 'block';
+    if (startCountDown <= 0) {
+        startText.style.display = 'none';
+    } else {
+        setTimeout(startCount, 1000);
+    }
 }
 
 /**
