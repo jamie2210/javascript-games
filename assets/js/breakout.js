@@ -24,6 +24,17 @@ const allBlocks = [
     new Block(430, 280),
     new Block(490, 280),
     new Block(550, 280),
+
+    new Block(25, 280),
+    new Block(70, 280),
+    new Block(130, 280),
+    new Block(190, 280),
+    new Block(250, 280),
+    new Block(310, 280),
+    new Block(370, 280),
+    new Block(430, 280),
+    new Block(490, 280),
+    new Block(550, 280),
 ]
 
 // draw all my blocks
