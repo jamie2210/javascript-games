@@ -285,13 +285,13 @@
 
 .grid-container {
     margin: auto;
-    width: 600px;
+    width: 615px;
     height: 300px;
 }
 
 .grid {
     position: absolute;
-    width: 600px;
+    width: 615px;
     height: 300px;
     border: solid black 1px;
     background-color: #d8d8d8;
@@ -303,8 +303,6 @@
     width: 50px;
     height: 10px;
     background-color: rgb(170, 60, 60);
-    left: 50px;
-    top: 50px;
 }
 
 
