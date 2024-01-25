@@ -285,17 +285,16 @@
 
 .grid-container {
     margin: auto;
-    width: 615px;
+    width: 620px;
     height: 300px;
+    border: solid black 1px;
 }
 
 .grid {
     position: absolute;
-    width: 615px;
+    width: 620px;
     height: 300px;
-    border: solid black 1px;
     background-color: #d8d8d8;
-
 }
 
 .block {
