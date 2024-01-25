@@ -144,3 +144,8 @@ const ball = document.createElement('div');
 ball.classList.add('ball');
 drawBall();
 grid.appendChild(ball);
+
+// Move the ball
+function moveBall() {
+    
+}
