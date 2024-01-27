@@ -1,13 +1,20 @@
 const grid = document.querySelector('.grid');
+const scoreDisplay = document.querySelector('#score');
 const blockWidth = 50;
 const blockHeight = 10;
-const boardWidth = 615;
+const boardWidth = 620;
+const ballBoardWidth = 630;
+const boardHeight = 310;
+const ballDiameter = 20;
 
-const userStart = [285, 10]
+const userStart = [280, 10]
 let currentPosition = userStart
 
-const ballStart = [305, 40]
+const ballStart = [300, 40]
 let ballCurrentPosition = ballStart
+let timerId
+let xDirection = 2;
+let yDirection = 2;
 
 // create Block
 class Block {
@@ -147,5 +154,48 @@ grid.appendChild(ball);
 
 // Move the ball
 function moveBall() {
-    
+    ballCurrentPosition[0] += xDirection;
+    ballCurrentPosition[1] += yDirection;
+    drawBall();
+    checkCollisions();
+}
+
+timerId = setInterval(moveBall, 20);
+
+// check for collisions
+function checkCollisions() {
+    //check for wall collisions
+    if (
+        ballCurrentPosition[0] >= (ballBoardWidth - ballDiameter) || 
+        ballCurrentPosition[1] >= (boardHeight - ballDiameter) ||
+        ballCurrentPosition[0] <= 0
+        ) {
+        changeDirection();
+    }
+
+    // check for game over
+    if (ballCurrentPosition[1] <= 0) {
+        clearInterval(timerId)
+        scoreDisplay.innerHTML = 'GAME OVER! You Lose.';
+        document.removeEventListener('keydown', moveUser);
+    }
+}
+
+function changeDirection() {
+    if (xDirection === 2 && yDirection === 2) {
+        yDirection = -2
+        return
+    }
+    if (xDirection === 2 && yDirection === -2) {
+        xDirection = -2
+        return
+    }
+    if (xDirection === -2 && yDirection === -2 ) {
+        yDirection = 2
+        return
+    }
+    if (xDirection === -2 && yDirection === 2) {
+        xDirection = 2
+        return
+    }
 }

@@ -278,6 +278,10 @@
     background-color: #181818;
 }
 
+#score {
+    color: white;
+}
+
 .breakout-row-width {
     margin: auto;
     max-width: 800px;
