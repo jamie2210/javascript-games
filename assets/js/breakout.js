@@ -1,5 +1,11 @@
 const grid = document.querySelector('.grid');
 const scoreDisplay = document.querySelector('#score');
+const winScore = document.querySelector('#win-modal-score');
+const loseScore = document.querySelector('#lose-modal-score');
+const modalBackground = document.getElementById('modal-background');
+const loseModalBackground = document.getElementById('lose-modal-background');
+const winModal = document.getElementById('win-modal');
+const loseModal = document.getElementById('lose-modal');
 const blockWidth = 50;
 const blockHeight = 10;
 const boardWidth = 620;
@@ -29,71 +35,71 @@ class Block {
 
 // All my blocks
 const blocks = [
-    // new Block(14, 280),
-    // new Block(74, 280),
-    // new Block(134, 280),
-    // new Block(194, 280),
-    // new Block(254, 280),
-    // new Block(314, 280),
-    // new Block(374, 280),
-    // new Block(434, 280),
-    // new Block(494, 280),
-    // new Block(554, 280),
+    new Block(14, 280),
+    new Block(74, 280),
+    new Block(134, 280),
+    new Block(194, 280),
+    new Block(254, 280),
+    new Block(314, 280),
+    new Block(374, 280),
+    new Block(434, 280),
+    new Block(494, 280),
+    new Block(554, 280),
 
-    // new Block(14, 260),
-    // new Block(74, 260),
-    // new Block(134, 260),
-    // new Block(194, 260),
-    // new Block(254, 260),
-    // new Block(314, 260),
-    // new Block(374, 260),
-    // new Block(434, 260),
-    // new Block(494, 260),
-    // new Block(554, 260),
+    new Block(14, 260),
+    new Block(74, 260),
+    new Block(134, 260),
+    new Block(194, 260),
+    new Block(254, 260),
+    new Block(314, 260),
+    new Block(374, 260),
+    new Block(434, 260),
+    new Block(494, 260),
+    new Block(554, 260),
 
-    // new Block(14, 240),
-    // new Block(74, 240),
-    // new Block(134, 240),
-    // new Block(194, 240),
-    // new Block(254, 240),
-    // new Block(314, 240),
-    // new Block(374, 240),
-    // new Block(434, 240),
-    // new Block(494, 240),
-    // new Block(554, 240),
+    new Block(14, 240),
+    new Block(74, 240),
+    new Block(134, 240),
+    new Block(194, 240),
+    new Block(254, 240),
+    new Block(314, 240),
+    new Block(374, 240),
+    new Block(434, 240),
+    new Block(494, 240),
+    new Block(554, 240),
 
-    // new Block(14, 220),
-    // new Block(74, 220),
-    // new Block(134, 220),
-    // new Block(194, 220),
-    // new Block(254, 220),
-    // new Block(314, 220),
-    // new Block(374, 220),
-    // new Block(434, 220),
-    // new Block(494, 220),
-    // new Block(554, 220),
+    new Block(14, 220),
+    new Block(74, 220),
+    new Block(134, 220),
+    new Block(194, 220),
+    new Block(254, 220),
+    new Block(314, 220),
+    new Block(374, 220),
+    new Block(434, 220),
+    new Block(494, 220),
+    new Block(554, 220),
 
-    // new Block(14, 200),
-    // new Block(74, 200),
-    // new Block(134, 200),
-    // new Block(194, 200),
-    // new Block(254, 200),
-    // new Block(314, 200),
-    // new Block(374, 200),
-    // new Block(434, 200),
-    // new Block(494, 200),
-    // new Block(554, 200),
+    new Block(14, 200),
+    new Block(74, 200),
+    new Block(134, 200),
+    new Block(194, 200),
+    new Block(254, 200),
+    new Block(314, 200),
+    new Block(374, 200),
+    new Block(434, 200),
+    new Block(494, 200),
+    new Block(554, 200),
 
-    // new Block(14, 180),
-    // new Block(74, 180),
-    // new Block(134, 180),
-    // new Block(194, 180),
-    // new Block(254, 180),
-    // new Block(314, 180),
+    new Block(14, 180),
+    new Block(74, 180),
+    new Block(134, 180),
+    new Block(194, 180),
+    new Block(254, 180),
+    new Block(314, 180),
     new Block(374, 180),
-    // new Block(434, 180),
-    // new Block(494, 180),
-    // new Block(554, 180),
+    new Block(434, 180),
+    new Block(494, 180),
+    new Block(554, 180),
 ]
 
 // draw all my blocks
@@ -176,13 +182,15 @@ function checkCollisions() {
             blocks.splice(i, 1);
             changeDirection();
             score++
-            scoreDisplay.innerHTML = score
+            scoreDisplay.innerHTML = score;
 
             // Check for win
             if (blocks.length === 0) {
-                scoreDisplay.innerHTML = "YOU WIN";
                 clearInterval(timerId);
                 document.removeEventListener('keydown', moveUser);
+                winModal.style.display = "block";
+                modalBackground.style.display = "block";
+                winScore.innerHTML = score;
             }
         }
     }
@@ -207,8 +215,10 @@ function checkCollisions() {
     // check for game over
     if (ballCurrentPosition[1] <= 0) {
         clearInterval(timerId);
-        scoreDisplay.innerHTML = 'GAME OVER! You Lose.';
         document.removeEventListener('keydown', moveUser);
+        loseModal.style.display = 'block';
+        loseModalBackground.style.display = 'block';
+        loseScore.innerHTML = score;
     }
 }
 
@@ -230,3 +240,18 @@ function changeDirection() {
         return
     }
 }
+
+/**
+* Resets everything on the page apart from the Wins and Losses scores.
+* Closes modal.
+*/
+function reset() {
+    location.reload();
+  }
+  
+  /**
+  * Return use home
+  */
+  function home() {
+    window.location.href = 'index.html';
+  }

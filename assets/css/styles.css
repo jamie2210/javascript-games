@@ -372,6 +372,10 @@
     background-color: rgb(91, 100, 179);
 }
 
+.breakout-modal {
+    background-color: rgb(39, 39, 39);
+}
+
 .score-text {
     padding-bottom: 10px;
 }
