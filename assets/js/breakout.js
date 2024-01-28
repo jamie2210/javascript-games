@@ -6,6 +6,10 @@ const modalBackground = document.getElementById('modal-background');
 const loseModalBackground = document.getElementById('lose-modal-background');
 const winModal = document.getElementById('win-modal');
 const loseModal = document.getElementById('lose-modal');
+const button = document.querySelector('.breakout-start-button');
+const startText = document.querySelector('.start-text');
+const startGameCount = document.querySelector('#start-game-count')
+
 const blockWidth = 50;
 const blockHeight = 10;
 const boardWidth = 620;
@@ -19,9 +23,14 @@ let currentPosition = userStart
 const ballStart = [300, 40]
 let ballCurrentPosition = ballStart
 let timerId
-let xDirection = 2;
-let yDirection = 2;
-let score = 0
+
+// Randomly set xDirection to -2 or 2
+xDirection = Math.random() < 0.5 ? -2 : 2;
+// Randomly set yDirection to -2 or 2
+yDirection = Math.random() < 0.5 ? -2 : 2;
+
+let score = 0;
+let startCountDown = 4;
 
 // create Block
 class Block {
@@ -167,8 +176,6 @@ function moveBall() {
     checkCollisions();
 }
 
-timerId = setInterval(moveBall, 20);
-
 // check for collisions
 function checkCollisions() {
     // Check for block collisions
@@ -238,6 +245,26 @@ function changeDirection() {
     if (xDirection === -2 && yDirection === 2) {
         xDirection = 2
         return
+    }
+}
+
+function startGame() {
+    startCount();
+    setTimeout(() => {
+        button.style.visibility = 'hidden';
+        timerId = setInterval(moveBall, 20);
+        countDownTimerId = setInterval(countDown, 1000);
+    }, 3000);
+}
+
+function startCount() {
+    startCountDown--
+    startGameCount.textContent = startCountDown;
+    startText.style.display = 'block';
+    if (startCountDown <= 0) {
+        startText.style.display = 'none';
+    } else {
+        setTimeout(startCount, 1000);
     }
 }
 

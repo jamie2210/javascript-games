@@ -54,13 +54,17 @@
         </header>
         <div class="breakout-row-width">
             <div class="title text-center">
-                <h1 class="title">Break Out</h1>
+                <h1 class="title break-title">Break Out</h1>
+                <button class="breakout-start-button" onClick="startGame()">Let's play!</button>
             </div>
 
             <!-- Game Grid -->
             <div class="row">
                 <div class="col-12">
-                    <div id="score">0</div>
+                    <div class="start-text">
+                        <p><span id="start-game-count">3</span></p>
+                    </div>
+                    <div class="score-text">Score <span id="score">0</span></div>
                     <div class="grid-container">
                         
                     <div class="grid">

@@ -270,6 +270,7 @@
     color: white;
     display: none;
     font-size: 60vh;
+    z-index: 1;
 }
 
 /* -------------------------------- Break Out  */
@@ -278,8 +279,29 @@
     background-color: #181818;
 }
 
-#score {
+.score-text,
+.break-title {
     color: white;
+}
+
+.breakout-start-button {
+    background-color: rgb(39, 39, 39);
+    border: 2px solid #d8d8d8;
+    border-radius: 5%;
+    padding: 10px 15px;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+.breakout-start-button:hover {
+    background-color: rgb(84, 84, 84);
+    transform: scale(1.1);
+}
+
+.breakout-start-button:active {
+    background-color: rgb(39, 39, 39);
+    transform: scale(1);
 }
 
 .breakout-row-width {
