@@ -155,6 +155,23 @@ function moveUser(e) {
         case 'keyup':
             stopMoving();
             break;
+        case 'touchstart':
+            touchMove(e.target);
+            break;
+        case 'touchend':
+            stopMoving();
+            break;
+    }
+}
+
+function touchMove(target) {
+    if (!isMoving) {
+        isMoving =true;
+        if (target.classList.contains('fa-chevron-left')) {
+            moveLeft();
+        } else if (target.classList.contains('fa-chevron-right')) {
+            moveRight();
+        }
     }
 }
 
@@ -200,6 +217,8 @@ function stopMoving() {
 
 document.addEventListener('keydown', moveUser);
 document.addEventListener('keyup', moveUser);
+document.addEventListener('touchstart', moveUser);
+document.addEventListener('touchend', moveUser);
 
 // Add ball
 const ball = document.createElement('div');

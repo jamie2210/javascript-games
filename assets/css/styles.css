@@ -118,7 +118,7 @@
 }
 
 .choice-display p {
-    font-weight:300;
+    font-weight: 300;
     font-size: 25px;
 }
 
@@ -309,6 +309,12 @@
     max-width: 800px;
 }
 
+.outter-grid {
+    margin: auto;
+    width: 750px;
+    height: 350px;
+}
+
 .grid-container {
     margin: auto;
     width: 620px;
@@ -343,6 +349,24 @@
     border-radius: 5px;
     background-color: black;
     position: absolute;
+}
+
+.fa-chevron-left {
+    color: white;
+    float: left;
+    font-size: 30px;
+    margin-right: 20px;
+}
+
+.fa-chevron-right {
+    color: white;
+    float: right;
+    font-size: 30px;
+    margin-left: 20px;
+}
+
+.arrows {
+    display: none;
 }
 
 
