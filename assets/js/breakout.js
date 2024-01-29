@@ -18,7 +18,10 @@ const boardHeight = 310;
 const ballDiameter = 20;
 
 const userStart = [280, 10]
+const speed = 40;
+let movementInterval;
 let currentPosition = userStart
+let isMoving = false;
 
 const ballStart = [300, 40]
 let ballCurrentPosition = ballStart
@@ -27,7 +30,7 @@ let timerId
 // Randomly set xDirection to -2 or 2
 xDirection = Math.random() < 0.5 ? -2 : 2;
 // Randomly set yDirection to -2 or 2
-yDirection = Math.random() < 0.5 ? -2 : 2;
+yDirection = 2;
 
 let score = 0;
 let startCountDown = 4;
@@ -142,25 +145,61 @@ function drawBall() {
     ball.style.bottom = ballCurrentPosition[1] + 'px';
 }
 
-// Move user
+// move the user block
+
 function moveUser(e) {
-    switch(e.key) {
-        case 'ArrowLeft':
-            if (currentPosition[0] > 0) {
-            currentPosition[0] -= 20;
-            drawUser();
-            }
+    switch(e.type) {
+        case 'keydown':
+            startMoving(e.key);
             break;
-        case 'ArrowRight':
-            if (currentPosition[0] < boardWidth - blockWidth) {
-            currentPosition[0] += 20;
-            drawUser();
-            }
+        case 'keyup':
+            stopMoving();
             break;
     }
 }
 
-document.addEventListener('keydown', moveUser)
+function startMoving(key) {
+    if (!isMoving) {
+        isMoving = true;
+        switch(key) {
+            case 'ArrowLeft':
+                moveLeft();
+                break;
+            case 'ArrowRight':
+                moveRight();
+                break;
+        }
+    }
+}
+
+function moveLeft() {
+    stopMoving();
+    movementInterval = setInterval(function() {
+        if (currentPosition[0] > 0) {
+            currentPosition[0] -= 10;
+            drawUser();
+        }
+    }, speed);
+}
+
+function moveRight() {
+    stopMoving();
+    movementInterval = setInterval(function() {
+        if (currentPosition[0] < boardWidth - blockWidth) {
+            currentPosition[0] += 10;
+            drawUser();
+        }
+    }, speed);
+}
+
+function stopMoving() {
+    clearInterval(movementInterval);
+    isMoving = false;
+}
+
+
+document.addEventListener('keydown', moveUser);
+document.addEventListener('keyup', moveUser);
 
 // Add ball
 const ball = document.createElement('div');
