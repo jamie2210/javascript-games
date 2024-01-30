@@ -590,7 +590,7 @@
 }
 
 /* Styles for screens with width between 600px and 900px and height between 400px and 600px */
-@media screen and (min-width: 750px) and (max-width: 850px) and (min-height: 300px) and (max-height: 400px) {
+@media screen and (min-width: 750px) and (max-width: 900px) and (min-height: 300px) and (max-height: 450px) {
     /* Your styles for this screen size range */
     .arrows {
         display: block;
