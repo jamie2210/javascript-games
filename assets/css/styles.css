@@ -282,6 +282,7 @@
 .score-text,
 .break-title {
     color: white;
+    padding-left: 15px;
 }
 
 .breakout-start-button {
@@ -292,6 +293,20 @@
     color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     margin-bottom: 10px;
+}
+
+.change-orientation {
+    color: white;
+    text-align: center;
+    margin: auto;
+    display: none;
+    padding: none;
+}
+
+.change-orientation img, p {
+    max-width: 200px;
+    height: auto;
+    margin: auto;
 }
 
 .breakout-start-button:hover {
@@ -309,7 +324,7 @@
     max-width: 800px;
 }
 
-.outter-grid {
+.outer-grid {
     margin: auto;
     width: 750px;
     height: 350px;

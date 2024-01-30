@@ -1,5 +1,8 @@
+const outerGrid = document.querySelector('.outer-grid');
 const grid = document.querySelector('.grid');
+const changeOrientation = document.querySelector('.change-orientation');
 const scoreDisplay = document.querySelector('#score');
+const scoreText = document.querySelector('.score-text');
 const winScore = document.querySelector('#win-modal-score');
 const loseScore = document.querySelector('#lose-modal-score');
 const modalBackground = document.getElementById('modal-background');
@@ -325,6 +328,33 @@ function startCount() {
         setTimeout(startCount, 1000);
     }
 }
+
+function portraitScreen() {
+    
+
+    if (window.matchMedia("(orientation: portrait)").matches) {
+        outerGrid.style.display = 'none';
+        scoreText.style.display = 'none';
+        scoreDisplay.style.display = 'none';
+        button.style.display = 'none';
+        changeOrientation.style.display = 'block';
+    } else {
+        // Reset display property
+        outerGrid.style.display = ''; 
+        scoreText.style.display = '';
+        scoreDisplay.style.display = '';
+        button.style.display = '';
+        changeOrientation.style.display = 'none'
+    }
+}
+
+// Initial call to set the initial state
+portraitScreen();
+
+// Add event listeners to respond to changes in orientation and resize
+window.addEventListener('orientationchange', portraitScreen);
+window.addEventListener('resize', portraitScreen);
+
 
 /**
 * Resets everything on the page apart from the Wins and Losses scores.
