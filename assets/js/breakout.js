@@ -49,7 +49,7 @@ class Block {
 }
 
 // All my blocks
-const blocks = [
+const blocksLarge = [
     new Block(14, 280),
     new Block(74, 280),
     new Block(134, 280),
@@ -117,13 +117,83 @@ const blocks = [
     new Block(554, 180),
 ]
 
+const blocksSmall = [
+    new Block(5, 227),
+    new Block(55, 227),
+    new Block(105, 227),
+    new Block(155, 227),
+    new Block(205, 227),
+    new Block(255, 227),
+    new Block(305, 227),
+    new Block(355, 227),
+    new Block(405, 227),
+    new Block(455, 227),
+
+    new Block(5, 215),
+    new Block(55, 215),
+    new Block(105, 215),
+    new Block(155, 215),
+    new Block(205, 215),
+    new Block(255, 215),
+    new Block(305, 215),
+    new Block(355, 215),
+    new Block(405, 215),
+    new Block(455, 215),
+
+    new Block(5, 203),
+    new Block(55, 203),
+    new Block(105, 203),
+    new Block(155, 203),
+    new Block(205, 203),
+    new Block(255, 203),
+    new Block(305, 203),
+    new Block(355, 203),
+    new Block(405, 203),
+    new Block(455, 203),
+
+    new Block(5, 191),
+    new Block(55, 191),
+    new Block(105, 191),
+    new Block(155, 191),
+    new Block(205, 191),
+    new Block(255, 191),
+    new Block(305, 191),
+    new Block(355, 191),
+    new Block(405, 191),
+    new Block(455, 191),
+
+    new Block(5, 179),
+    new Block(55, 179),
+    new Block(105, 179),
+    new Block(155, 179),
+    new Block(205, 179),
+    new Block(255, 179),
+    new Block(305, 179),
+    new Block(355, 179),
+    new Block(405, 179),
+    new Block(455, 179),
+
+    new Block(5, 167),
+    new Block(55, 167),
+    new Block(105, 167),
+    new Block(155, 167),
+    new Block(205, 167),
+    new Block(255, 167),
+    new Block(305, 167),
+    new Block(355, 167),
+    new Block(405, 167),
+    new Block(455, 167),
+]
+
 // draw all my blocks
 function addBlocks() {
-    for (let i = 0; i < blocks.length; i++){
+    const currentBlocks = window.innerWidth >= 768 ? blocksLarge : blocksSmall;
+
+    for (let i = 0; i < currentBlocks.length; i++){
         const block = document.createElement('div');
         block.classList.add('block')
-        block.style.left = blocks[i].bottomLeft[0] + 'px';
-        block.style.bottom = blocks[i].bottomLeft[1] + 'px';
+        block.style.left = currentBlocks[i].bottomLeft[0] + 'px';
+        block.style.bottom = currentBlocks[i].bottomLeft[1] + 'px';
         grid.appendChild(block);
     }
 }
@@ -362,11 +432,11 @@ window.addEventListener('resize', portraitScreen);
 */
 function reset() {
     location.reload();
-  }
-  
-  /**
-  * Return use home
-  */
-  function home() {
+}
+
+/**
+ * Return use home
+ */
+function home() {
     window.location.href = 'index.html';
-  }
+}
