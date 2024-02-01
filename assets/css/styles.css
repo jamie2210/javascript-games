@@ -279,10 +279,13 @@
     background-color: #181818;
 }
 
-.score-text,
 .break-title {
     color: white;
-    padding-left: 15px;
+}
+
+.score-text {
+    color: white;
+    padding-left: 30px;
 }
 
 .breakout-start-button {
@@ -483,6 +486,10 @@
         width: 40px;
         height: 8px;
     }
+    .user {
+        width: 40px;
+        height: 8px;
+    }
 
 }
 
@@ -552,6 +559,10 @@
     .whac-grid {
         width: 450px;
     }
+    .outer-grid {
+        width: 550px;
+        height: 300px;
+    }
 }
 
 @media (max-width: 485px) {
@@ -563,6 +574,7 @@
         width: 400px;
         padding: 0;
     }
+    
 }
 
 @media (max-width: 485px) {
@@ -588,6 +600,7 @@
     .whac-text {
         margin-left: 10px;
     }
+    
 }
 
 @media (max-width: 350px) {   

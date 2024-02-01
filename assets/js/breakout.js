@@ -13,20 +13,45 @@ const button = document.querySelector('.breakout-start-button');
 const startText = document.querySelector('.start-text');
 const startGameCount = document.querySelector('#start-game-count')
 
-const blockWidth = 50;
-const blockHeight = 10;
-const boardWidth = 620;
-const ballBoardWidth = 630;
-const boardHeight = 310;
+const largeBlockHeight = 10;
+const smallBlockHeight = 8;
+
+const largeBlockWidth = 50;
+const smallBlockWidth = 40;
+
+const LargeBoardWidth = 620;
+const smallBoardWidth = 500;
+
+const largeBallBoardWidth = 630;
+const smallBallBoardWidth = 510;
+
+const largeBoardHeight = 310;
+const smallBoardHeight = 250;
+
 const ballDiameter = 20;
 
-const userStart = [280, 10]
+const blockWidth = window.innerWidth >= 768 ? largeBlockWidth : smallBlockWidth;
+const blockHeight = window.innerWidth >= 768 ? largeBlockHeight : smallBlockHeight;
+const boardWidth = window.innerWidth >= 768 ? LargeBoardWidth : smallBoardWidth;
+const ballBoardWidth = window.innerWidth >= 768 ? largeBallBoardWidth : smallBallBoardWidth;
+const boardHeight = window.innerWidth >= 768 ? largeBoardHeight : smallBoardHeight;
+
+
+const largeUserStart = [280, 10]
+const smallUserStart = [230, 8]
+const userStart = window.innerWidth >= 768 ? largeUserStart : smallUserStart;
+
 const speed = 40;
 let movementInterval;
 let currentPosition = userStart
 let isMoving = false;
 
-const ballStart = [300, 40]
+let currentBlocks = [];
+
+const largeBallStart = [300, 40]
+const smallBallStart = [245, 35]
+const ballStart = window.innerWidth >= 768 ? largeBallStart : smallBallStart;
+
 let ballCurrentPosition = ballStart
 let timerId
 
@@ -187,8 +212,7 @@ const blocksSmall = [
 
 // draw all my blocks
 function addBlocks() {
-    const currentBlocks = window.innerWidth >= 768 ? blocksLarge : blocksSmall;
-
+    currentBlocks = window.innerWidth >= 768 ? blocksLarge : blocksSmall;
     for (let i = 0; i < currentBlocks.length; i++){
         const block = document.createElement('div');
         block.classList.add('block')
@@ -310,20 +334,20 @@ function moveBall() {
 // check for collisions
 function checkCollisions() {
     // Check for block collisions
-    for (let i = 0; i < blocks.length; i++) {
+    for (let i = 0; i < currentBlocks.length; i++) {
         if (
-            (ballCurrentPosition[0] > blocks[i].bottomLeft[0] && ballCurrentPosition[0] < blocks[i].bottomRight[0]) &&
-            ((ballCurrentPosition[1] + ballDiameter) > blocks[i].bottomLeft[1] && ballCurrentPosition[1] < blocks[i].topLeft[1])
+            (ballCurrentPosition[0] > currentBlocks[i].bottomLeft[0] && ballCurrentPosition[0] < currentBlocks[i].bottomRight[0]) &&
+            ((ballCurrentPosition[1] + ballDiameter) > currentBlocks[i].bottomLeft[1] && ballCurrentPosition[1] < currentBlocks[i].topLeft[1])
         ) {
             const allBlocks = Array.from(document.querySelectorAll('.block'));
             allBlocks[i].classList.remove('block');
-            blocks.splice(i, 1);
+            currentBlocks.splice(i, 1);
             changeDirection();
             score++
             scoreDisplay.innerHTML = score;
 
             // Check for win
-            if (blocks.length === 0) {
+            if (currentBlocks.length === 0) {
                 clearInterval(timerId);
                 document.removeEventListener('keydown', moveUser);
                 winModal.style.display = "block";
@@ -400,8 +424,6 @@ function startCount() {
 }
 
 function portraitScreen() {
-    
-
     if (window.matchMedia("(orientation: portrait)").matches) {
         outerGrid.style.display = 'none';
         scoreText.style.display = 'none';
@@ -418,13 +440,36 @@ function portraitScreen() {
     }
 }
 
+var previousSize = window.innerWidth;
+
+function checkScreenSize() {
+    var currentSize = window.innerWidth;
+
+    // Check if the screen size crosses the threshold of 768 pixels
+    if ((previousSize < 768 && currentSize >= 768) || (previousSize >= 768 && currentSize < 768)) {
+        location.reload();
+    }
+
+    // Update the previous size for the next check
+    previousSize = currentSize;
+}
+
+// Call the function initially
+checkScreenSize();
+
+function handleResize() {
+    portraitScreen();
+    checkScreenSize();
+}
+
+handleResize();
+
 // Initial call to set the initial state
 portraitScreen();
 
 // Add event listeners to respond to changes in orientation and resize
 window.addEventListener('orientationchange', portraitScreen);
-window.addEventListener('resize', portraitScreen);
-
+window.addEventListener('resize', handleResize);
 
 /**
 * Resets everything on the page apart from the Wins and Losses scores.
