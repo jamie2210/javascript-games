@@ -263,7 +263,7 @@
 .start-text {
     width: auto;
     height: auto;
-    position: absolute;
+    position: fixed; 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -286,6 +286,7 @@
 .score-text {
     color: white;
     padding-left: 30px;
+    padding-bottom: 10px;
 }
 
 .breakout-start-button {
@@ -440,7 +441,7 @@
     background-color: rgb(39, 39, 39);
 }
 
-.score-text {
+.modal-score-text {
     padding-bottom: 10px;
 }
 
@@ -467,9 +468,17 @@
         width: auto;
         transition: transform 0.3s;
     }
-    .lose-modal,
-    .win-modal {
-        max-width: 400px;
+    .game-modal,
+    .lose-game-modal {
+        max-width: 300px;
+        height: auto;
+        padding-bottom: 20px !important;
+    }
+
+    .modal-icon {
+        margin: 20px;
+        height: 100px;
+        width: auto;
     }
 
     .outer-grid {
