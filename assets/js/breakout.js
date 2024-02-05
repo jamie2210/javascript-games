@@ -57,7 +57,6 @@ let timerId
 
 // Randomly set xDirection to -2 or 2
 xDirection = Math.random() < 0.5 ? -2 : 2;
-// Randomly set yDirection to -2 or 2
 yDirection = 2;
 
 let score = 0;
@@ -68,8 +67,8 @@ class Block {
     constructor(xAxis, yAxis) {
         this.bottomLeft = [xAxis, yAxis]
         this.bottomRight = [xAxis + blockWidth, yAxis]
-        this.topLeft = [ xAxis, yAxis + blockHeight]
         this.topRight = [xAxis + blockWidth, yAxis + blockHeight]
+        this.topLeft = [ xAxis, yAxis + blockHeight]
     }
 }
 

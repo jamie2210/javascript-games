@@ -454,7 +454,6 @@
 /* -------------------------------- Media Queries */
 
 @media (max-width: 768px) {
-
     .comp-answer {
         margin-left: 0;
     }
@@ -513,10 +512,6 @@
 }
 
 @media (max-width: 573px) {
-    .lose-modal,
-    .win-modal {
-        max-width: 350px;
-    }
     .rps-icon {
         margin: 0;
         height: 100px;
@@ -613,9 +608,11 @@
 }
 
 @media (max-width: 350px) {   
-    .lose-modal,
-    .win-modal {
+    .game-modal,
+    .lose-game-modal {
         max-width: 275px;
+        height: auto;
+        padding-bottom: 20px !important;
     }
     .square {
         width: 90px;
@@ -628,9 +625,20 @@
 }
 
 /* Breakout specifc for landscape mode and chevron controllers */
-@media screen and (min-width: 480px) and (max-width: 1336px) and (min-height: 300px) and (max-height: 1024px) {
-    /* Your styles for this screen size range */
+@media screen and (min-width: 480px) and (max-width: 1368px) and (min-height: 280px) and (max-height: 1024px) {
     .arrows {
         display: block;
     }
-  }
+
+    .game-modal,
+    .lose-game-modal {
+        max-width: 350px;
+        height: auto;
+        padding-bottom: 20px !important;
+    }
+    .modal-icon {
+        margin: 20px;
+        height: 100px;
+        width: auto;
+    }
+}
