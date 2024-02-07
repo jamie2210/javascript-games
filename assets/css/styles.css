@@ -388,6 +388,37 @@
     display: none;
 }
 
+/* -------------------------------- Frogger  */
+
+.frogger-grid {
+    border: 1px solid black;
+    height: 180px;
+    width: 360px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: content-box;
+}
+
+.frogger-grid div {
+    height: 20px;
+    width: 40px;
+}
+
+.ending-block {
+    background-color: aqua;
+}
+
+.starting-block {
+    background-color: rgb(37, 5, 246);
+}
+
+.log-left, .log-right {
+    background-color: bisque;
+}
+
+.car-left, .car-right {
+    background-color: #8a8988;
+}
 
 /* -------------------------------- Modals  */
 
