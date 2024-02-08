@@ -299,6 +299,16 @@
     margin-bottom: 10px;
 }
 
+.breakout-start-button:hover {
+    background-color: rgb(84, 84, 84);
+    transform: scale(1.1);
+}
+
+.breakout-start-button:active {
+    background-color: rgb(39, 39, 39);
+    transform: scale(1);
+}
+
 .change-orientation {
     color: white;
     text-align: center;
@@ -313,15 +323,7 @@
     margin: auto;
 }
 
-.breakout-start-button:hover {
-    background-color: rgb(84, 84, 84);
-    transform: scale(1.1);
-}
 
-.breakout-start-button:active {
-    background-color: rgb(39, 39, 39);
-    transform: scale(1);
-}
 
 .breakout-row-width {
     margin: auto;
@@ -390,6 +392,36 @@
 
 /* -------------------------------- Frogger  */
 
+.frog-colour {
+    background-color: #709a4d;
+}
+
+.frogger-row-width {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;}
+
+.frogger-start-button {
+    background-color: rgb(208, 207, 207);
+    border: 2px solid #1d4d23;
+    border-radius: 5%;
+    padding: 10px 15px;
+    color: #014209;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+.frogger-start-button:hover {
+    background-color: rgb(143, 185, 137);
+    transform: scale(1.1);
+    color: rgb(208, 207, 207);
+}
+
+.frogger-start-button:active {
+    background-color: #014209;;
+    transform: scale(1);
+}
+
 .frogger-grid {
     border: 1px solid black;
     height: 180px;
@@ -397,6 +429,8 @@
     display: flex;
     flex-wrap: wrap;
     box-sizing: content-box;
+    background-color: #d2d2d2;
+    margin: auto;
 }
 
 .frogger-grid div {
