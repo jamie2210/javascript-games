@@ -401,25 +401,34 @@
     margin: auto;
     text-align: center;}
 
-.frogger-start-button {
+.button-cont {
+    height: 80px;
+}
+
+.frogger-button {
     background-color: rgb(208, 207, 207);
     border: 2px solid #1d4d23;
     border-radius: 5%;
     padding: 10px 15px;
     color: #014209;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin-bottom: 10px;
+    margin: 10px;
 }
 
-.frogger-start-button:hover {
+.frogger-button:hover {
     background-color: rgb(143, 185, 137);
     transform: scale(1.1);
     color: rgb(208, 207, 207);
 }
 
-.frogger-start-button:active {
+.frogger-button:active {
     background-color: #014209;;
     transform: scale(1);
+}
+
+#pause-button {
+    display: none;
+    margin: auto;
 }
 
 .frogger-grid {
