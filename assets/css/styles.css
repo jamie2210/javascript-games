@@ -455,9 +455,9 @@
     background-color: rgb(37, 5, 246);
 }
 
-.log-left, .log-right {
+/* .log-left, .log-right {
     background-color: bisque;
-}
+} */
 
 .car-left, .car-right {
     background-color: #8a8988;
@@ -465,6 +465,14 @@
 
 .frog {
     background-color: #014209;
+}
+
+.l1, .l2, .l3 {
+    background-color: brown;
+}
+
+.l4, .l5 {
+    background-color: bisque;
 }
 
 /* -------------------------------- Modals  */
