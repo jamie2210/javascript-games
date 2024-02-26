@@ -459,7 +459,15 @@
     background-color: bisque;
 } */
 
-.car-left, .car-right {
+/* .car-left, .car-right {
+    background-color: #8a8988;
+} */
+
+.c1 {
+    background-color: #181818;
+}
+
+.c2, .c3 {
     background-color: #8a8988;
 }
 
